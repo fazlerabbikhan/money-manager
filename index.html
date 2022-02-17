@@ -18,86 +18,91 @@
 
     <main>
         <section class="my-10">
-            <div class="grid grid-cols-2 gap-4 w-3/4 mx-auto">
+            <div class="grid md:grid-cols-2 gap-4 w-4/5 mx-auto">
                 <div>
                     <img src="images/money.jpg" alt="">
                 </div>
                 <div class="bg-slate-200 py-10">
+                    <!-- Income -->
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
                             Income
                         </h2>
                     </div>
-                    <div class="flex justify-end mt-5 mr-20">
+                    <div class="flex justify-center mt-5">
                         <h2 class="text-2xl">
                             Income:
                         </h2>
-                        <input class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
+                        <input id="income-input" class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
                     </div>
+                    <!-- Expenses -->
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
                             Expenses
                         </h2>
                     </div>
-                    <div class="flex justify-end mt-5 mr-20">
+                    <div class="flex justify-center mt-5 ml-6">
                         <h2 class="text-2xl">
                             Food:
                         </h2>
-                        <input class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
+                        <input id="food-input" class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
                     </div>
-                    <div class="flex justify-end mt-5 mr-20">
+                    <div class="flex justify-center mt-5 ml-8">
                         <h2 class="text-2xl">
                             Rent:
                         </h2>
-                        <input class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
+                        <input id="rent-input" class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
                     </div>
-                    <div class="flex justify-end mt-5 mr-20">
+                    <div class="flex justify-center mt-5">
                         <h2 class="text-2xl">
                             Clothes:
                         </h2>
-                        <input class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
+                        <input id="clothes-input" class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
                     </div>
+                    <!-- Calculate Expenses -->
                     <div class="flex justify-center mt-5">
-                        <button class="bg-blue-500 text-white p-2 text-bold rounded">
+                        <button id="calculate-button" class="bg-blue-500 text-white p-2 text-bold rounded">
                             Calculate
                         </button>
                     </div>
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
-                            Total Expenses: <span>5500</span>
+                            Total Expenses: <span id="total-expenses">00</span>
                         </h2>
                     </div>
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
-                            Balance: <span>4500</span>
+                            Balance: <span id="balance">00</span>
                         </h2>
                     </div>
+                    <!-- Calculate Savings -->
                     <div class="flex justify-center mt-5">
                         <h2 class="text-2xl">
                             Save:
                         </h2>
-                        <input class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
+                        <input id="save-input" class="border bg-slate-300 border-gray-400 rounded ml-5" type="text">
                         <h2 class="text-2xl mx-5">
                             %
                         </h2>
-                        <button class="bg-blue-500 text-bold text-white px-2 rounded">
+                        <button id="save-button" class="bg-blue-500 text-bold text-white px-2 rounded">
                             Save
                         </button>
                     </div>
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
-                            Saving Amount: <span>2000</span>
+                            Saving Amount: <span id="saving-amount">00</span>
                         </h2>
                     </div>
                     <div>
                         <h2 class="text-2xl font-semibold text-center mt-5">
-                            Remaining Balance: <span>2500</span>
+                            Remaining Balance: <span id="remaining-balance">00</span>
                         </h2>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="js/money.js"></script>
 </body>
 
 </html>
