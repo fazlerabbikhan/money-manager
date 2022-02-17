@@ -12,8 +12,8 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const rentCost = getInput('rent-input');
     const clothesCost = getInput('clothes-input');
 
+    // calculate expenses
     if (foodCost >= 0 && rentCost >= 0 && clothesCost >= 0) {
-        // calculate expenses
         const newTotalExpenses = foodCost + rentCost + clothesCost;
 
         const totalExpenses = document.getElementById('total-expenses');
@@ -21,8 +21,8 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
         console.log(newTotalExpenses);
 
+        // calculate balance
         if (incomeAmount > newTotalExpenses) {
-            // calculate balance
             const newBalance = incomeAmount - newTotalExpenses;
 
             const balance = document.getElementById('balance');
@@ -61,8 +61,8 @@ document.getElementById('save-button').addEventListener('click', function () {
     const balanceText = balance.innerText;
     const balanceAmount = parseFloat(balanceText);
 
-    if (incomeAmount > 0) {
-        // calculate saving amount
+    // calculate saving amount
+    if (incomeAmount > 0 && savePercentage > 0) {
         const newSavingAmount = incomeAmount * savePercentage / 100;
 
         const savingAmount = document.getElementById('saving-amount');
@@ -70,8 +70,8 @@ document.getElementById('save-button').addEventListener('click', function () {
 
         console.log(newSavingAmount);
 
+        // calculate remaining balance
         if (balanceAmount > newSavingAmount) {
-            // calculate remaining balance
             const newRemainingBalance = balanceAmount - newSavingAmount;
 
             const remainingBalance = document.getElementById('remaining-balance');
@@ -84,17 +84,16 @@ document.getElementById('save-button').addEventListener('click', function () {
             remainingBalance.innerText = '00';
         }
         else if (balanceAmount < newSavingAmount) {
-            const remainingBalance = document.getElementById('remaining-balance');
-            remainingBalance.innerText = 'Balance must be bigger than saving amount!';
-        }
-        else {
+            const savingAmount = document.getElementById('saving-amount');
+            savingAmount.innerText = 'You cannot save more than your balance!';
+
             const remainingBalance = document.getElementById('remaining-balance');
             remainingBalance.innerText = '';
         }
     }
     else {
         const savingAmount = document.getElementById('saving-amount');
-        savingAmount.innerText = 'Please give income amount!';
+        savingAmount.innerText = 'Please give income amount along with a positive percentage for saving!';
 
         const remainingBalance = document.getElementById('remaining-balance');
         remainingBalance.innerText = '';
